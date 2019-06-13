@@ -1,0 +1,16 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. ONEDTABL.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 WS-STR-TABLE.
+          05 WS-PRD OCCURS 3 TIMES PIC X(10).
+       PROCEDURE DIVISION.
+            MOVE "SOAP " TO WS-PRD(1).
+            MOVE "DETERGENT " TO WS-PRD(2).
+            MOVE "SHAMPOO" TO WS-PRD(3).
+            DISPLAY " I AM AN EXAMPLE OF 1 DEMENSION: ".
+            DISPLAY " PRODUCT 1: " WS-PRD(1).
+            DISPLAY " PRODUCT 2: " WS-PRD(2).
+            DISPLAY " PRODUCT 3: " WS-PRD(3).
+            STOP RUN.
+

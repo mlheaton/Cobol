@@ -1,0 +1,26 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. STRINGOP.
+       ************************************************************************
+       * PROGRAM TO SHOW STRING OPERATION
+       ************************************************************************
+        DATA DIVISION.
+          WORKING-STORAGE SECTION.
+          01 WS-STR1 PIC X(10) VALUE 'I AM AN /'.
+          01 WS-STR2 PIC X(12) VALUE 'EXAMPLE OF '.
+          01 WS-STR3 PIC X(26) VALUE 'STRIG OPERATION ....'.
+          01 WS-F-STRING PIC X(30).
+          01 WS-POINTER PIC 9(2).
+        PROCEDURE DIVISION.
+            MOVE 1 TO WS-POINTER.
+            STRING WS-STR1 DELIMITED BY '/'
+                   WS-STR2 DELIMITED BY SIZE
+                   WS-STR3 DELIMITED BY SPACE
+                INTO WS-F-STRING
+                   WITH POINTER WS-POINTER
+                   ON OVERFLOW DISPLAY 'OVERFLOW'
+                   NOT ON OVEFLOW DISPLAY 'NOT OVERFLOW'
+            END-STRING.
+            DISPLAY ' FINAL STRING IS : ' WS-F-STRING.
+            DISPLAY ' POINTER IS : ' WS-POINTER
+            STOP RUN.
+
